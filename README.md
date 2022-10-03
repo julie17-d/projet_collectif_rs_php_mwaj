@@ -1,1 +1,1 @@
-# projet_collectif_reprojet_collectif_rs_php_mwaj
+# projet_collectif_rs_php_mwaj
