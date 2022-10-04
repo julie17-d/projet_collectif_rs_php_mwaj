@@ -31,6 +31,16 @@
             $rating = $_POST["rating"];
             echo $rating;
             //$_POST est une variable globale qui stocke toutes les donnes des requetes POST, c'est un tableau []
+            
+            $mysqlconnect = mysqli_connect("localhost","root","root","reso_social");
+            //Verification de la connexion si elle est vide ca affiche une erreur de connection
+            if (!$mysqlconnect) {
+                die(mysqli_connect_error());
+            } else { $insert = mysqli_query($mysqlconnect,"INSERT INTO `critique`(`id`,`author`,`content`,`rating`) VALUES ('1','$author','$content','$rating')" );
+                if(!$insert){
+                    echo mysqli_error($mysqlconnect);
+                }
+            }
     }
     ?>
     
