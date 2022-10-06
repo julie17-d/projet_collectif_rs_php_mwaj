@@ -35,7 +35,7 @@
             //Verification de la connexion si elle est vide ca affiche une erreur de connection
             if (!$mysqlconnect) {
                 die(mysqli_connect_error());
-            } else { $insert = mysqli_query($mysqlconnect,"INSERT INTO `critique`(`id`, `author`, `content`, `rating`) VALUES ('1', '$author','$content','$rating')" );
+            } else { $insert = mysqli_query($mysqlconnect,"INSERT INTO `critique`( `author`, `content`, `rating`) VALUES ( '$author','$content','$rating')" );
                 if(!$insert){
                     echo mysqli_error($mysqlconnect);
                 }
