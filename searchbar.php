@@ -12,11 +12,15 @@
     <div class="box">
       <input type="checkbox" id="check" />
       <div class="search-box">
-        <input type="text" placeholder="Type here..." />
+        <input type="text" placeholder="Type here..." id="searchField"/>
         <label for="check" class="icon">
-          <i class="fa-duotone fa-magnifying-glass"></i>
+          <i class="fa-fa-search">
+            <button id="search">search</button>
+          </i>
         </label>
       </div>
     </div>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

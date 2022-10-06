@@ -5,13 +5,17 @@ USE `reso_social`;
 
 DROP TABLE IF EXISTS `critique`;
 
-CREATE TABLE `critique`(
+CREATE TABLE `critiques`(
     `id`int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
     `author` varchar(50) NOT NULL,
     `content` text NOT NULL,
     `rating` int(1) UNSIGNED NOT NULL,
+    `imdbId` varchar(50) NOT NULL,
     PRIMARY KEY(`id`)
 );
+
+INSERT INTO `critiques` (`author`, `content`, `rating`, `imdbId`) VALUES
+('lebossdu75', 'amazing horror movie filled with tension and dread', 4, 'tt7784604');
 
 
 DROP TABLE IF EXISTS `login`;
@@ -23,4 +27,3 @@ CREATE TABLE `login`(
     `email` VARCHAR(50) NOT NULL,
     PRIMARY KEY(`id`)
 );
-
