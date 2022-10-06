@@ -4,11 +4,63 @@ let search;
 
 let searchbar = document.getElementById("searchbar");
 
-async function fetchMovies() {
-  let url = "http://www.omdbapi.com/?apikey=" + apiKey + "&s=" + "get out";
+async function fetchMovies(searchField) {
+  let url = "http://www.omdbapi.com/?apikey=" + apiKey + "&s=" + searchField;
   const response = await fetch(url);
   const data = await response.json();
+  // console.log(data);
   return data;
 }
 
-console.log(fetchMovies());
+function getButton() {
+  let searchField = document.getElementById("searchField");
+  let button = document.getElementById("search");
+  button.addEventListener("click", (event) => {
+    printMovie(searchField.value).then((movies) => {
+      console.log(movies);
+      // $.post("testRedirection.php",
+      //     {
+      //         movies: movies
+      //     },
+      //     function (data, status) {
+      //         console.log("Status: " + status);
+      //         // console.log(data)
+      //         redirection();
+      //     });
+      // $.get( "testRedirection.php", function( data ) {
+      //     // $( ".result" ).html( data );
+      // console.log(data);
+      redirection(movies[0].title);
+      // alert( "Load was performed." );
+      //   });
+    });
+  });
+}
+
+async function printMovie(searchField) {
+  const data = await fetchMovies(searchField);
+  let title;
+  let year;
+  let imdbId;
+  let poster;
+
+  let movies = [];
+
+  for (i = 0; i < data.Search.length; i++) {
+    title = data.Search[i].Title;
+    year = data.Search[i].Year;
+    imdbId = data.Search[i].imdbID;
+    poster = data.Search[i].Poster;
+
+    movies.push({ title, year, imdbId, poster });
+  }
+
+  return movies;
+}
+
+function redirection(get) {
+  window.location.href =
+    "testRedirection.php/?movies=" + encodeURIComponent(get);
+}
+
+getButton();
