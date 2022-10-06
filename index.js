@@ -2,6 +2,8 @@ const apiKey = "c65527ff";
 
 let search;
 
+let searchbar = document.getElementById("searchbar");
+
 async function fetchMovies() {
   let url = "http://www.omdbapi.com/?apikey=" + apiKey + "&s=" + "get out";
   const response = await fetch(url);
@@ -9,4 +11,4 @@ async function fetchMovies() {
   return data;
 }
 
-fetchMovies();
+console.log(fetchMovies());
