@@ -18,7 +18,7 @@ function getButton() {
     button.addEventListener("click", event => {
         printMovie(searchField.value).then((movies) => {
             console.log(movies);
-            $.post("testRedirection.php",
+            $.post("researchPage.php",
                 {
                     movies: movies
                 },
@@ -27,13 +27,6 @@ function getButton() {
                     // console.log(data)
                     redirection(data);
                 });
-            // $.get( "testRedirection.php", function( data ) {
-            //     // $( ".result" ).html( data );
-            // console.log(data);
-            // redirection(movies[0].title);
-            // alert( "Load was performed." );
-            //   });
-           
         });
     })
 }
