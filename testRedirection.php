@@ -8,17 +8,13 @@
 </head>
 <body>
     <?php
-        $movies = urldecode($_GET["movies"]);
-        
-        echo $movies[0]["title"];
+        if (isset($_POST["movies"])) {
+            $movies = $_POST["movies"];
 
-        echo "toto";
-        // echo $title;
-        if (isset($_GET["movies"])) {
-            echo "test";
+            echo $movies[0]['title'] . " " . $movies[0]['year'];
         }
 
-        // echo "<a href=\"./moviePage.php?imdbId=" . urlencode($imdbId) . "\">" . $title . "</a>";
+        echo "<a href=\"./moviePage.php/?imdbId=" . urlencode($movies[0]['imdbId']) . "\">" . $movies[0]['title'] . "</a>";
     ?>
 
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>

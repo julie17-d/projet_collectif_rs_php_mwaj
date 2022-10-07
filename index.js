@@ -18,21 +18,22 @@ function getButton() {
     button.addEventListener("click", event => {
         printMovie(searchField.value).then((movies) => {
             console.log(movies);
-            // $.post("testRedirection.php",
-            //     {
-            //         movies: movies
-            //     },
-            //     function (data, status) {
-            //         console.log("Status: " + status);
-            //         // console.log(data)
-            //         redirection();
-            //     });
+            $.post("testRedirection.php",
+                {
+                    movies: movies
+                },
+                function (data, status) {
+                    console.log("Status: " + status);
+                    // console.log(data)
+                    redirection(data);
+                });
             // $.get( "testRedirection.php", function( data ) {
             //     // $( ".result" ).html( data );
             // console.log(data);
-            redirection(movies[0].title);
+            // redirection(movies[0].title);
             // alert( "Load was performed." );
             //   });
+           
         });
     })
 }
@@ -43,23 +44,27 @@ async function printMovie(searchField) {
     let year;
     let imdbId;
     let poster;
+    let type;
 
     let movies = [];
+
+    // console.log("data", data);
 
     for (i = 0; i < data.Search.length; i++) {
         title = data.Search[i].Title;
         year = data.Search[i].Year;
         imdbId = data.Search[i].imdbID;
         poster = data.Search[i].Poster;
+        type = data.Search[i].Type;
 
-        movies.push({ title, year, imdbId, poster });
+        movies.push({ title, year, imdbId, poster, type });
     }
 
     return movies;
 }
 
-function redirection(get) {
-    window.location.href = "testRedirection.php/?movies=" + encodeURIComponent(get);
+function redirection(test) {
+    document.querySelector('html').innerHTML = test;
 }
 
 getButton();
