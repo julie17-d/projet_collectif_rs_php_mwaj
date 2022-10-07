@@ -11,10 +11,12 @@
         if (isset($_POST["movies"])) {
             $movies = $_POST["movies"];
 
-            echo $movies[0]['title'] . " " . $movies[0]['year'];
-        }
+            for ($i=0; $i<count($movies); $i++) {
+                echo $movies[$i]['title'] . " " . $movies[$i]['year'];
 
-        echo "<a href=\"./moviePage.php/?imdbId=" . urlencode($movies[0]['imdbId']) . "\">" . $movies[0]['title'] . "</a>";
+                echo "<a href=\"./moviePage.php/?imdbId=" . urlencode($movies[$i]['imdbId']) . "&title=" . urlencode($movies[$i]['title']) . "&year=" . urlencode($movies[$i]['year']) . "&poster=" . urlencode($movies[$i]['poster']) . "&type=" . urlencode($movies[$i]['type']) . "\"><img src=\"" . $movies[$i]['poster'] . "\"></a><br>";
+            }
+        }
     ?>
 
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>

@@ -8,7 +8,14 @@
 </head>
 <body>
     <?php
-        $imdbId = $_GET["imdbId"];
+        $title = urldecode($_GET["title"]);
+        $year = urldecode($_GET["year"]);
+        $type = urldecode($_GET["type"]);
+        $poster = urldecode($_GET["poster"]);
+        $imdbId = urldecode($_GET["imdbId"]);
+
+        echo "$title ($year)";
+        echo "<img src=$poster/>";
 
         $connect = mysqli_connect("localhost", "root", "root", "reso_social");
         if (!$connect) {
@@ -20,13 +27,18 @@
             } else {
                 $data = mysqli_fetch_array($critiques);
 
-                $author = $data["author"];
-                $content = $data["content"];
-                $rating = $data["rating"];
+                if($data != "") {
+                    $author = $data["author"];
+                    $content = $data["content"];
+                    $rating = $data["rating"];
+
+                    echo "$author: $content ($rating stars)";
+                }
             };
         };
     ?>
     
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="moviepage.js"></script>
 </body>
 </html>
