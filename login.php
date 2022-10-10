@@ -1,3 +1,25 @@
+<?php 
+$connect = mysqli_connect("localhost","root","root","reso_social");
+if(isset($_POST["submit"])){
+    // var_dump ($_POST);
+    if (!empty($_POST["name"]) && !empty($_POST['email']) && !empty ($_POST['password'])){
+        $name=$_POST['name'];
+        $email=$_POST['email'];
+        $password=password_hash($_POST['password'], PASSWORD_DEFAULT);
+        // var_dump ($name, $email, $password);
+        if (!$connect) {
+            die(mysqli_connect_error());
+        }else{$insert=mysqli_query($connect,"INSERT INTO `users_table`(`name`, `email`,`password`) VALUES ('$name', '$email', '$password')" );
+            if(!$insert){
+                echo mysqli_error($connect);
+            };
+    // }else{
+        // echo "Veuillez compléter tous les champs";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,18 +36,21 @@
         <div class="left">
             <img src="images/left_small2.jpg" alt="affiches films">
         </div>
+
         <div class="right">
             <img src="images/right20.jpg" alt="film">
             <div class="login-box">
                 <h2>Login</h2>
-                <form>
+                <form action="login.php" method="POST">
+
                     <div class="user-box">
-                        <input type="text" name="" required="">
-                        <label>Username</label>
+                        <label for="name">Your Name</label>
+                        <input type="text" name="name">
                     </div>
+
                     <div class="user-box">
-                        <input type="password" name="" required="">
-                        <label>Password</label>
+                        <label for="name">Password</label>
+                        <input type="text" name="password">
                     </div>
         
                     <div class="button-form">
@@ -36,7 +61,7 @@
         
                         <div id="register">
                             Don't have an account ?
-                            <a href="#">
+                            <a href="signup.php">
                                 Register
                             </a>
                         </div>
