@@ -23,6 +23,7 @@
     </form>
 
     <?php 
+    // var_dump ($_POST);
     if (isset($_POST["submit"])){ #isset permet de verifier qu'une requete post est faite et si pas de requete post, ca ne rentre pas dans le if
             $author = $_POST["author"];
             echo $author;
