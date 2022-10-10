@@ -22,8 +22,8 @@ DROP TABLE IF EXISTS `login`;
 
 CREATE TABLE `login`(
     `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-    `login` VARCHAR(50) NOT NULL,
-    `password` VARCHAR(50) NOT NULL,
+    `name` VARCHAR(50) NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
     `email` VARCHAR(50) NOT NULL,
     PRIMARY KEY(`id`)
 );
