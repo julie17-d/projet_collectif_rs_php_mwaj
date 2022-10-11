@@ -12,7 +12,6 @@ if(isset($_POST['submit'])){
         session_start();
         $_SESSION['name']=$name;
         header("location:indexhome.html");
-
     }else{
         echo"<script>alert('Your username or your password is incorrect')</script>";
     }
@@ -28,9 +27,7 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styleconnect.css">
     <title>CONNECTION</title>
-
 </head>
-
 
 <body>
     <div class="affichage">
@@ -42,29 +39,6 @@ if(isset($_POST['submit'])){
             <img src="images/right20.jpg" alt="film">
             <div class="login-box">
                 <h2>Login</h2>
-
-                <?php
-                $traitement = isset($_POST['name']);
-                var_dump($_POST);
-                if ($traitement) {
-                    $verifieName = $_POST[$verifieName];
-                    $mysqli = new mysqli("localhost", "root", "root", "reso_social");
-                    $verifieName = $mysqli->real_escape_string($verifieName);
-
-                    $lInstructionSql = "SELECT * FROM ";
-
-                    $res = $mysqli->query($lInstructionSql);
-                    $user = $res->fetch_assoc();
-                    if (!$user or $user["name"] != $verifieName) {
-                        echo "La connexion a échouée. ";
-                    } else {
-
-                        echo "Votre connexion est un succès : " . $user['alias'] . ".";
-
-                        $_SESSION['connected_id'] = $user['id'];
-                    }
-                }
-                ?>
 
                 <form action="login.php" method="POST">
 
@@ -101,31 +75,3 @@ if(isset($_POST['submit'])){
 </body>
 
 </html>
-<?php
-if ($_SERVER["REQUEST_METHOD"] == $POST) {
-    $host = "localhost";
-    $username = "root";
-    $passeword = "root";
-    $database = "reso_social";
-
-    $name = $_POST["name"];
-
-    if (!isset($name)) {
-        die("rentrez votre nom");
-    }
-    $mysqli = new mysqli($host, $username, $password, $database);
-    if ($mysqli->connect_error) {
-        die('Error : (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
-    }
-
-    $statement = $mysqli->prepare("INSERT INTO users_table(name) VALUES($name)");
-    $statement->bind_param('ss', $name);
-
-    if ($statement->execute()) {
-        print "Salut " . $name . "!, votre adresse e-mail est ";
-    } else {
-        print $mysqli->error;
-    }
-}
-
-?>
