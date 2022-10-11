@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS `reso_social` DEFAULT CHARACTER SET utf8mb4 COLLAT
 USE `reso_social`;
 
 
-DROP TABLE IF EXISTS `critique`;
+DROP TABLE IF EXISTS `critiques`;
 
 CREATE TABLE `critiques`(
     `id`int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -20,7 +20,7 @@ INSERT INTO `critiques` (`author`, `content`, `rating`, `imdbId`) VALUES
 
 DROP TABLE IF EXISTS `login`;
 
-CREATE TABLE `login`(
+CREATE TABLE `signup`(
     `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
     `password` VARCHAR(255) NOT NULL,

@@ -13,7 +13,7 @@ async function fetchMovies(searchField) {
 }
 
 function getButton() {
-  let searchField = document.getElementById("searchField");
+  let searchField = document.getElementById("searchbar");
   let button = document.getElementById("search");
   button.addEventListener("click", (event) => {
     printMovie(searchField.value).then((movies) => {
