@@ -29,8 +29,8 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styleconnect.css">
     <title>CONNECTION</title>
-   
-   
+
+
 </head>
 
 
@@ -45,6 +45,32 @@ if(isset($_POST['submit'])){
             <div class="login-box">
                 <h2>Login</h2>
 
+<<<<<<< HEAD
+=======
+                <?php
+                $traitement = isset($_POST['name']);
+                var_dump($_POST);
+                if ($traitement) {
+                    $verifieName = $_POST[$verifieName];
+                    $mysqli = new mysqli("localhost", "root", "root", "reso_social");
+                    $verifieName = $mysqli->real_escape_string($verifieName);
+
+                    $lInstructionSql = "SELECT * FROM ";
+
+                    $res = $mysqli->query($lInstructionSql);
+                    $user = $res->fetch_assoc();
+                    if (!$user or $user["name"] != $verifieName) {
+                        echo "La connexion a échouée. ";
+                    } else {
+
+                        echo "Votre connexion est un succès : " . $user['alias'] . ".";
+
+                        $_SESSION['connected_id'] = $user['id'];
+                    }
+                }
+                ?>
+
+>>>>>>> mehmet
                 <form action="login.php" method="POST">
 
                     <div class="user-box">
@@ -56,21 +82,29 @@ if(isset($_POST['submit'])){
                         <label for="name"></label>
                         <input type="password" name="password">
                     </div>
-        
+
                     <div class="button-form">
+<<<<<<< HEAD
         
                     <button type="submit" name="submit">Submit</button>
         
+=======
+
+                        <a id="submit" href="#">
+                            Submit
+                        </a>
+
+>>>>>>> mehmet
                         <div id="register">
                             Don't have an account ?
                             <a href="signup.php">Register</a>
                         </div>
-        
+
                     </div>
-        
+
                 </form>
             </div>
-        
+
         </div>
     </div>
 
@@ -81,30 +115,30 @@ if(isset($_POST['submit'])){
 
 </html>
 <?php
-if($_SERVER ["REQUEST_METHOD"]== POST){
+if ($_SERVER["REQUEST_METHOD"] == $POST) {
     $host = "localhost";
     $username = "root";
-    $passeword ="root";
-    $database="reso_social";
+    $passeword = "root";
+    $database = "reso_social";
 
-    $name = $_POST ["name"];
+    $name = $_POST["name"];
 
-    if(!isset($name)){
+    if (!isset($name)) {
         die("rentrez votre nom");
     }
     $mysqli = new mysqli($host, $username, $password, $database);
     if ($mysqli->connect_error) {
-        die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
-      }  
-
-      $statement = $mysqli->prepare("INSERT INTO users_table(name) VALUES($name)");
-      $statement->bind_param('ss', $name); 
-    
-    if($statement->execute()){
-      print "Salut " . $name . "!, votre adresse e-mail est ";
-    }else{
-      print $mysqli->error; 
+        die('Error : (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
     }
-  } 
+
+    $statement = $mysqli->prepare("INSERT INTO users_table(name) VALUES($name)");
+    $statement->bind_param('ss', $name);
+
+    if ($statement->execute()) {
+        print "Salut " . $name . "!, votre adresse e-mail est ";
+    } else {
+        print $mysqli->error;
+    }
+}
 
 ?>
