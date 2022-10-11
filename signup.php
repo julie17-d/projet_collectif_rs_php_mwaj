@@ -5,7 +5,8 @@ if(isset($_POST["submit"])){
     if (!empty($_POST["name"]) && !empty($_POST['email']) && !empty($_POST['password'])){
         $name=$_POST['name'];
         $email=$_POST['email'];
-        $password=password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $password=$_POST['password'];
+       // $password=password_hash($_POST['password'], PASSWORD_DEFAULT);
         // var_dump ($name, $email, $password);
         if (!$connect) {
             die(mysqli_connect_error());
@@ -46,7 +47,7 @@ if(isset($_POST["submit"])){
         
         <div>
             <label for="pasword">Password</label>
-            <input type="text" name="password" autocomplete="off">
+            <input type="password" name="password" autocomplete="off">
             <br>
         </div>
 
