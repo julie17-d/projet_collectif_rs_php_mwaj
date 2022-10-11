@@ -1,5 +1,23 @@
 <?php
 session_start();
+if(isset($_POST['submit'])){
+    $connect = mysqli_connect("localhost","root","root","reso_social");
+    $password = $_POST['password'];
+    // echo $password;
+    $name = $_POST['name'];
+    $select_user = "SELECT * FROM users_table WHERE name='$name' AND password='$password'";
+    $query =mysqli_query($connect,$select_user);
+    $check_user=mysqli_num_rows($query);
+
+    if($check_user == 1){
+        session_start();
+        $_SESSION['name']=$name;
+        header("location:indexhome.html");
+
+    }else{
+        echo"<script>alert('Your username or your password is incorrect')</script>";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,32 +42,6 @@ session_start();
             <div class="login-box">
                 <h2>Login</h2>
 
-                <?php
-                $traitement=isset($_POST['name']);
-                var_dump($_POST);
-                if ($traitement)
-                {
-                    $verifieName = $_POST[$verifieName];
-                    $mysqli = new mysqli("localhost", "root", "root","reso_social");
-                    $verifieName = $mysqli->real_escape_string($verifieName);
-
-                    $lInstructionSql = "SELECT * FROM ";
-
-                        $res = $mysqli->query($lInstructionSql);
-                        $user = $res->fetch_assoc();
-                        if ( ! $user OR $user["name"] != $verifieName)
-                        {
-                            echo "La connexion a échouée. ";
-
-                        }else{
-
-                            echo "Votre connexion est un succès : " . $user['alias'] . ".";
-
-                    $_SESSION['connected_id']=$user['id'];
-            }
-        }
-                ?>
-
                 <form action="login.php" method="POST">
 
                     <div class="user-box">
@@ -59,20 +51,16 @@ session_start();
 
                     <div class="user-box">
                         <label for="name"></label>
-                        <input type="text" name="password">
+                        <input type="password" name="password">
                     </div>
         
                     <div class="button-form">
         
-                        <a id="submit" href="#">
-                            Submit
-                        </a>
+                    <button type="submit" name="submit">Submit</button>
         
                         <div id="register">
                             Don't have an account ?
-                            <a href="signup.php">
-                                Register
-                            </a>
+                            <a href="signup.php">Register</a>
                         </div>
         
                     </div>
