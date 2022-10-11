@@ -1,5 +1,4 @@
 <?php
-session_start();
 if(isset($_POST['submit'])){
     $connect = mysqli_connect("localhost","root","root","reso_social");
     $password = $_POST['password'];
@@ -29,8 +28,7 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styleconnect.css">
     <title>CONNECTION</title>
-   
-   
+
 </head>
 
 
