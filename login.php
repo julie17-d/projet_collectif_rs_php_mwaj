@@ -1,24 +1,5 @@
-<?php 
-$connect = mysqli_connect("localhost","root","root","reso_social");
-if(isset($_POST["submit"])){
-    // var_dump ($_POST);
-    if (!empty($_POST["name"]) && !empty($_POST['email']) && !empty ($_POST['password'])){
-        $name=$_POST['name'];
-        $email=$_POST['email'];
-        $password=password_hash($_POST['password'], PASSWORD_DEFAULT);
-        // var_dump ($name, $email, $password);
-        if (!$connect) {
-            die(mysqli_connect_error());
-        }else{$insert=mysqli_query($connect,"INSERT INTO `users_table`(`name`, `email`,`password`) VALUES ('$name', '$email', '$password')" );
-            if(!$insert){
-                echo mysqli_error($connect);
-            };
-    // }else{
-        // echo "Veuillez compléter tous les champs";
-        }
-    }
-}
-?>
+
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -29,7 +10,10 @@ if(isset($_POST["submit"])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styleconnect.css">
     <title>CONNECTION</title>
+   
+   
 </head>
+
 
 <body>
     <div class="affichage">
@@ -81,3 +65,31 @@ if(isset($_POST["submit"])){
 </body>
 
 </html>
+<?php
+if($_SERVER ["REQUEST_METHOD"]== POST){
+    $host = "localhost";
+    $username = "root";
+    $passeword ="root";
+    $database="reso_social";
+
+    $name = $_POST ["name"];
+
+    if(!isset($name)){
+        die("rentrez votre nom");
+    }
+    $mysqli = new mysqli($host, $username, $password, $database);
+    if ($mysqli->connect_error) {
+        die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
+      }  
+
+      $statement = $mysqli->prepare("INSERT INTO users_table(name) VALUES($name)");
+      $statement->bind_param('ss', $name); 
+    
+    if($statement->execute()){
+      print "Salut " . $name . "!, votre adresse e-mail est ";
+    }else{
+      print $mysqli->error; 
+    }
+  } 
+
+?>
