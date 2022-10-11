@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="stylehome.css">
     <link rel="stylesheet" type="text/css" media="screen" href="sliderstyle.css">
+    <link href="https://visiwig.com/patterns">
 </head>
 
 <body>
