@@ -15,7 +15,7 @@
 <body>
     <header>
         <div id="navlist">
-            <a href="index.php"><img src="images/logo.png"></a>
+            <a href="indexhome.html"><img src="images/logo.png"></a>
             <div class="flexbox">
                 <h4>Rechercher...</h4>
                 <div class="search">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-            <p><a href="connect.html">Me connecter</a></p>
+            <p><a href="login.php">Me connecter</a></p>
         </div>
     </header>
     <div class="container">
