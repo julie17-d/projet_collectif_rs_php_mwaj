@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 
 
+=======
+<?php
+session_start();
+?>
+>>>>>>> 966d8fa4fde16ce728877178eea3be286fb9c875
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -25,15 +31,42 @@
             <img src="images/right20.jpg" alt="film">
             <div class="login-box">
                 <h2>Login</h2>
+
+                <?php
+                $traitement=isset($_POST['name']);
+                var_dump($_POST);
+                if ($traitement)
+                {
+                    $verifieName = $_POST[$verifieName];
+                    $mysqli = new mysqli("localhost", "root", "root","reso_social");
+                    $verifieName = $mysqli->real_escape_string($verifieName);
+
+                    $lInstructionSql = "SELECT * FROM ";
+
+                        $res = $mysqli->query($lInstructionSql);
+                        $user = $res->fetch_assoc();
+                        if ( ! $user OR $user["name"] != $verifieName)
+                        {
+                            echo "La connexion a échouée. ";
+
+                        }else{
+
+                            echo "Votre connexion est un succès : " . $user['alias'] . ".";
+
+                    $_SESSION['connected_id']=$user['id'];
+            }
+        }
+                ?>
+
                 <form action="login.php" method="POST">
 
                     <div class="user-box">
-                        <label for="name">Your Name</label>
+                        <label for="name"></label>
                         <input type="text" name="name">
                     </div>
 
                     <div class="user-box">
-                        <label for="name">Password</label>
+                        <label for="name"></label>
                         <input type="text" name="password">
                     </div>
         
@@ -58,10 +91,9 @@
         </div>
     </div>
 
-
-
     <footer>
     </footer>
+
 </body>
 
 </html>
