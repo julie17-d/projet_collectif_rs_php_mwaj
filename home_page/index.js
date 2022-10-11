@@ -19,7 +19,7 @@ function getButton() {
     printMovie(searchField.value).then((movies) => {
       console.log(movies);
       $.post(
-        "researchPage.php",
+        "../movie_page/researchPage.php",
         {
           movies: movies,
         },

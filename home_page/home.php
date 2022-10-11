@@ -9,38 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="stylehome.css">
     <link rel="stylesheet" type="text/css" media="screen" href="sliderstyle.css">
-<<<<<<< HEAD
     <link href="https://visiwig.com/patterns">
-=======
->>>>>>> mehmet
 </head>
 
 <body>
     <header>
         <div id="navlist">
-<<<<<<< HEAD
-            <a href="index.php"><img src="images/logo.png"></a>
-=======
-            <a href="indexhome.html"><img src="images/logo.png"></a>
->>>>>>> mehmet
+            <a href="home.php"><img src="../images/logo.png"></a>
             <div class="flexbox">
                 <h4>Rechercher...</h4>
                 <div class="search">
                     <div>
-<<<<<<< HEAD
                         <input type="text" id="searchbar" placeholder="Search . . ." required>
                         <button type="submit" class="searchbutton" id="search">search</button>
                     </div>
                 </div>
             </div>
-            <p><a href="connect.html">Me connecter</a></p>
-=======
-                        <input type="text" placeholder="Search . . ." required>
-                    </div>
-                </div>
-            </div>
-            <p><a href="login.php">Me connecter</a></p>
->>>>>>> mehmet
+            <p><a href="../login/login.php">Me connecter</a></p>
         </div>
     </header>
     <div class="container">
@@ -114,12 +99,8 @@
     </footer>
 
 
-<<<<<<< HEAD
     <script src="index.js"></script>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-=======
-    <script src="homesearch.js"></script>
->>>>>>> mehmet
 
 </body>
 

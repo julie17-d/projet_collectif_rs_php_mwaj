@@ -47,32 +47,32 @@ body {
 
 
 .carousel__face:nth-child(1) {
-    background-image: url("images/batman.jpg");
+    background-image: url("../images/batman.jpg");
     transform: rotateY(0deg) translateZ(430px);
 }
 
 .carousel__face:nth-child(2) {
-    background-image: url("images/grogu.jpg");
+    background-image: url("../images/grogu.jpg");
     transform: rotateY(40deg) translateZ(430px);
 }
 
 .carousel__face:nth-child(3) {
-    background-image: url("/images/minions.jpg");
+    background-image: url("../images/minions.jpg");
     transform: rotateY(80deg) translateZ(430px);
 }
 
 .carousel__face:nth-child(4) {
-    background-image: url("/images/comedy.jpg");
+    background-image: url("../images/comedy.jpg");
     transform: rotateY(120deg) translateZ(430px);
 }
 
 .carousel__face:nth-child(5) {
-    background-image: url("/images/drama.jpg");
+    background-image: url("../images/drama.jpg");
     transform: rotateY(160deg) translateZ(430px);
 }
 
 .carousel__face:nth-child(6) {
-    background-image: url("/images/sf.jpg");
+    background-image: url("../images/sf.jpg");
     transform: rotateY(200deg) translateZ(430px);
 }
 
@@ -87,7 +87,7 @@ body {
 }
 
 .carousel__face:nth-child(9) {
-    background-image: url("images/western.jpg");
+    background-image: url("../images/western.jpg");
     transform: rotateY(320deg) translateZ(430px);
 }
 
