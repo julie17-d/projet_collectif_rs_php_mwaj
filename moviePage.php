@@ -27,16 +27,17 @@
             if(!$critiques){
                 echo mysqli_error($connect);
             } else {
+                echo "<div class='critiques'><div class='movieLink'><br><h2>Critiques from the community:</h2>";
                 while ($data = mysqli_fetch_array($critiques)) {
                     if($data != "") {
                         $author = $data["author"];
                         $content = $data["content"];
                         $rating = $data["rating"];
     
-                        echo "<div class='critiques'><div class='movieLink'><br><h2>Critiques from the community:</h2>
-                        <br><h3>$author:</h3> $content ($rating stars)</div>";
-                    }
+                        echo "<br><h3>$author:</h3> $content ($rating stars)";
+                    }   
                 }
+                echo "</div>";
             };
         };
     ?>
