@@ -15,17 +15,16 @@
 <body>
     <header>
         <div id="navlist">
-            <a href="home.php"><img src="../images/logo.png"></a>
+            <a href="indexhome.html"><img src="images/logo.png"></a>
             <div class="flexbox">
                 <h4>Rechercher...</h4>
                 <div class="search">
                     <div>
-                        <input type="text" id="searchbar" placeholder="Search . . ." required>
-                        <button type="submit" class="searchbutton" id="search">search</button>
+                        <input type="text" placeholder="Search . . ." required>
                     </div>
                 </div>
             </div>
-            <p><a href="../login/login.php">Me connecter</a></p>
+            <p><a href="login.php">Me connecter</a></p>
         </div>
     </header>
     <div class="container">
@@ -101,6 +100,7 @@
 
     <script src="index.js"></script>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="homesearch.js"></script>
 
 </body>
 
