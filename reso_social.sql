@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS `reso_social` DEFAULT CHARACTER SET utf8mb4 COLLAT
 USE `reso_social`;
 
 
-DROP TABLE IF EXISTS `critique`;
+DROP TABLE IF EXISTS `critiques`;
 
 CREATE TABLE `critiques`(
     `id`int(10) UNSIGNED NOT NULL AUTO_INCREMENT,

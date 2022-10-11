@@ -19,7 +19,8 @@
                 <h4>Rechercher...</h4>
                 <div class="search">
                     <div>
-                        <input type="text" placeholder="Search . . ." required>
+                        <input type="text" id="searchbar" placeholder="Search . . ." required>
+                        <button type="submit" class="searchbutton" id="search">search</button>
                     </div>
                 </div>
             </div>
@@ -97,7 +98,8 @@
     </footer>
 
 
-    <script src="homesearch.js"></script>
+    <script src="index.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 
 </body>
 

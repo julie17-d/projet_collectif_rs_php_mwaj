@@ -128,3 +128,8 @@ footer a:hover {
 .search>div>input:not(:placeholder-shown) {
     width: 250px;
 }
+
+button.searchbutton {
+    background-color: #F2F2F2;
+    padding: 10px;
+}
