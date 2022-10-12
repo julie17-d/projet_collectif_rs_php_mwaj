@@ -19,8 +19,9 @@
             <div class="flexbox">
                 <div class="search">
                     <div>
-                        <input type="text" placeholder="Search . . ." required>
+                        <input type="text" id="searchbar" placeholder="Search . . ." required>
                     </div>
+                    <button type="submit" class="searchbutton" id="search">search</button>
                 </div>
             </div>
             <p><a href="../login/login.php">Sign up</a></p>
