@@ -18,7 +18,7 @@ INSERT INTO `critiques` (`author`, `content`, `rating`, `imdbId`) VALUES
 ('lebossdu75', 'amazing horror movie filled with tension and dread', 4, 'tt7784604');
 
 
-DROP TABLE IF EXISTS `login`;
+DROP TABLE IF EXISTS `signup`;
 
 CREATE TABLE `signup`(
     `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
