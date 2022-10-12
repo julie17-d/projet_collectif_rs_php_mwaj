@@ -63,3 +63,9 @@ function redirection(test) {
 }
 
 getButton();
+
+document.onkeydown = function () {
+  if (window.event.keyCode == "13") {
+    fetchMovies()
+  }
+}
