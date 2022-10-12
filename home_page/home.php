@@ -14,13 +14,13 @@
   <body>
     <header>
         <div id="navlist">
-            <a class= "logoCinema" href="indexhome.html"><img src="../images/logo_cinema.png"></a>
+            <a class= "logoCinema" href="home.php"><img src="../images/logo_cinema.png"></a>
             <div class="flexbox">
                 <div class="search">
                     <div>
                         <input type="text" id="searchbar" placeholder="Search . . ." required>
                     </div>
-                    <button type="submit" class="searchbutton" id="search">search</button>
+                    <!-- <button type="submit" class="searchbutton" id="search">search</button> -->
                 </div>
             </div>
             <p><a href="../login/login.php">Sign up</a></p>
