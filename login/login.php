@@ -74,9 +74,4 @@ if (isset($_POST['submit'])) {
 
 </body>
 
-<<<<<<< HEAD:login.php
 </html>
-
-=======
-</html>
->>>>>>> main:login/login.php
