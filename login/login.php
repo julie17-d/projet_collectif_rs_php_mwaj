@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styleconnect.css">
-    <title>CONNECTION</title>
+    <title>LOGIN</title>
 </head>
 
 <body>
@@ -43,13 +43,13 @@ if (isset($_POST['submit'])) {
                 <form action="login.php" method="POST">
 
                     <div class="user-box">
-                        <label for="name"></label>
-                        <input type="text" name="name">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" required="">
                     </div>
 
                     <div class="user-box">
-                        <label for="name"></label>
-                        <input type="password" name="password">
+                        <label for="name">Password</label>
+                        <input type="password" name="password" required="">
                     </div>
 
                     <div class="button-form">
