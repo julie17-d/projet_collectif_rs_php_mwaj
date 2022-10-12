@@ -1,6 +1,6 @@
 <?php
-session_start();
-unset($_SESSION ["id"]);
-unset($_SESSION["password"]);
-header('Location: home.php');
+session_start(); 
+session_destroy(); 
+header("location:/home_page/home.php"); 
+exit();
 ?>
