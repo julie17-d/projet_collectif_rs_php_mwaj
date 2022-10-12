@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HOME</title>
+<<<<<<< HEAD:indexhome.html
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
       rel="stylesheet"
@@ -22,9 +23,17 @@
       href="sliderstyle.css"
     />
   </head>
+=======
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylehome.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="sliderstyle.css">
+    <link href="https://visiwig.com/patterns">
+</head>
+>>>>>>> main:home_page/home.php
 
   <body>
     <header>
+<<<<<<< HEAD:indexhome.html
       <div id="navlist">
         <a href="index.php"><img src="images/logo.png" /></a>
         <div class="flexbox">
@@ -34,6 +43,19 @@
               <input type="text" placeholder="Search . . ." required />
             </div>
           </div>
+=======
+        <div id="navlist">
+            <a href="indexhome.html"><img src="images/logo.png"></a>
+            <div class="flexbox">
+                <h4>Rechercher...</h4>
+                <div class="search">
+                    <div>
+                        <input type="text" placeholder="Search . . ." required>
+                    </div>
+                </div>
+            </div>
+            <p><a href="login.php">Me connecter</a></p>
+>>>>>>> main:home_page/home.php
         </div>
         <p><a href="login.php">Me connecter</a></p>
       </div>
@@ -147,6 +169,12 @@
       <a href="contact.html">Contact</a>
     </footer>
 
+<<<<<<< HEAD:indexhome.html
+=======
+
+    <script src="index.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+>>>>>>> main:home_page/home.php
     <script src="homesearch.js"></script>
   </body>
 </html>

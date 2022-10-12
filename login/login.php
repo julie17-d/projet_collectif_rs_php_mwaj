@@ -1,21 +1,19 @@
 <?php
-session_start();
-if(isset($_POST['submit'])){
-    $connect = mysqli_connect("localhost","root","root","reso_social");
+if (isset($_POST['submit'])) {
+    $connect = mysqli_connect("localhost", "root", "root", "reso_social");
     $password = $_POST['password'];
     // echo $password;
     $name = $_POST['name'];
     $select_user = "SELECT * FROM users_table WHERE name='$name' AND password='$password'";
-    $query =mysqli_query($connect,$select_user);
-    $check_user=mysqli_num_rows($query);
+    $query = mysqli_query($connect, $select_user);
+    $check_user = mysqli_num_rows($query);
 
-    if($check_user == 1){
+    if ($check_user == 1) {
         session_start();
-        $_SESSION['name']=$name;
-        header("location:indexhome.html");
-
-    }else{
-        echo"<script>alert('Your username or your password is incorrect')</script>";
+        $_SESSION['name'] = $name;
+        header("location:../home_page/home.php");
+    } else {
+        echo "<script>alert('Your username or your password is incorrect')</script>";
     }
 }
 ?>
@@ -29,19 +27,16 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styleconnect.css">
     <title>CONNECTION</title>
-   
-   
 </head>
-
 
 <body>
     <div class="affichage">
         <div class="left">
-            <img src="images/left_small2.jpg" alt="affiches films">
+            <img src="../images/left_small2.jpg" alt="affiches films">
         </div>
 
         <div class="right">
-            <img src="images/right20.jpg" alt="film">
+            <img src="../images/right20.jpg" alt="film">
             <div class="login-box">
                 <h2>Login</h2>
 
@@ -56,21 +51,21 @@ if(isset($_POST['submit'])){
                         <label for="name"></label>
                         <input type="password" name="password">
                     </div>
-        
+
                     <div class="button-form">
-        
-                    <button type="submit" name="submit">Submit</button>
-        
+
+                        <button type="submit" name="submit">Submit</button>
+
                         <div id="register">
                             Don't have an account ?
-                            <a href="signup.php">Register</a>
+                            <a href="../sign_up/signup.php">Register</a>
                         </div>
-        
+
                     </div>
-        
+
                 </form>
             </div>
-        
+
         </div>
     </div>
 
@@ -79,5 +74,9 @@ if(isset($_POST['submit'])){
 
 </body>
 
+<<<<<<< HEAD:login.php
 </html>
 
+=======
+</html>
+>>>>>>> main:login/login.php
