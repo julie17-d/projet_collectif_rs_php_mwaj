@@ -15,16 +15,15 @@
 <body>
     <header>
         <div id="navlist">
-            <a href="indexhome.html"><img src="images/logo.png"></a>
+            <a class= "logoCinema" href="indexhome.html"><img src="../images/logo_cinema.png"></a>
             <div class="flexbox">
-                <h4>Rechercher...</h4>
                 <div class="search">
                     <div>
                         <input type="text" placeholder="Search . . ." required>
                     </div>
                 </div>
             </div>
-            <p><a href="login.php">Me connecter</a></p>
+            <p><a href="../login/login.php">Sign up</a></p>
         </div>
     </header>
     <div class="container">
