@@ -11,7 +11,7 @@ if (isset($_POST["submit"])) {
         if (!$connect) {
             die(mysqli_connect_error());
         } else {
-            $insert = mysqli_query($connect, "INSERT INTO `users_table`(`name`, `email`, `password`) VALUES ('$name', '$email', '$password')");
+            $insert = mysqli_query($connect, "INSERT INTO `login`(`login`, `email`, `password`) VALUES ('$name', '$email', '$password')");
             if (!$insert) {
                 echo mysqli_error($connect);
             };
