@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     if ($check_user == 1) {
         session_start();
         $_SESSION['name'] = $name;
-        header("location:../home_page/home.php");
+        header("location: ../home_page/home.php");
     } else {
         echo "<script>alert('Your username or your password is incorrect')</script>";
     }
