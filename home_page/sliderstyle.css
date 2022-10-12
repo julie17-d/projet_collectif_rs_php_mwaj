@@ -41,8 +41,8 @@ body {
 }*/
 
 .carousel__face:nth-child(1) {
-  background-image: url("../images/batman.jpg");
-  transform: rotateY(0deg) translateZ(430px);
+    background-image: url("../images/black_panther.jpg");
+    transform: rotateY(0deg) translateZ(430px);
 }
 
 .carousel__face:nth-child(2) {
@@ -66,18 +66,18 @@ body {
 }
 
 .carousel__face:nth-child(6) {
-  background-image: url("../images/sf.jpg");
-  transform: rotateY(200deg) translateZ(430px);
+    background-image: url("../images/avatar.jpg");
+    transform: rotateY(200deg) translateZ(430px);
 }
 
 .carousel__face:nth-child(7) {
-  background-image: url("");
-  transform: rotateY(240deg) translateZ(430px);
+    background-image: url("../images/it.jpg");
+    transform: rotateY(240deg) translateZ(430px);
 }
 
 .carousel__face:nth-child(8) {
-  background-image: url("");
-  transform: rotateY(280deg) translateZ(430px);
+    background-image: url("../images/titanic.jpg");
+    transform: rotateY(280deg) translateZ(430px);
 }
 
 .carousel__face:nth-child(9) {
