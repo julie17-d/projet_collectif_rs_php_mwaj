@@ -12,54 +12,60 @@ async function fetchMovies(searchField) {
   return data;
 }
 
+
+//     dictionary()
+//   }
+// }
+
 function getButton() {
   let searchField = document.getElementById("searchbar");
-  let button = document.getElementById("search");
-  button.addEventListener("click", (event) => {
-    printMovie(searchField.value).then((movies) => {
-      console.log(movies);
-      $.post(
-        "../movie_page/researchPage.php",
-        {
-          movies: movies,
-        },
-        function (data, status) {
-          console.log("Status: " + status);
-          // console.log(data)
-          redirection(data);
-        }
-      );
-    });
-  });
+  // let button = document.getElementById("search");
+  document.onkeydown = function () {
+    if (window.event.keyCode == "13") {
+      printMovie(searchField.value).then((movies) => {
+        console.log(movies);
+        $.post(
+          "../movie_page/researchPage.php",
+          {
+            movies: movies,
+          },
+          function (data, status) {
+            console.log("Status: " + status);
+            // console.log(data)
+            redirection(data);
+          }
+        );
+      });
+    };
+  }
 }
+  async function printMovie(searchField) {
+    const data = await fetchMovies(searchField);
+    let title;
+    let year;
+    let imdbId;
+    let poster;
+    let type;
 
-async function printMovie(searchField) {
-  const data = await fetchMovies(searchField);
-  let title;
-  let year;
-  let imdbId;
-  let poster;
-  let type;
+    let movies = [];
 
-  let movies = [];
+    // console.log("data", data);
 
-  // console.log("data", data);
+    for (i = 0; i < data.Search.length; i++) {
+      title = data.Search[i].Title;
+      year = data.Search[i].Year;
+      imdbId = data.Search[i].imdbID;
+      poster = data.Search[i].Poster;
+      type = data.Search[i].Type;
 
-  for (i = 0; i < data.Search.length; i++) {
-    title = data.Search[i].Title;
-    year = data.Search[i].Year;
-    imdbId = data.Search[i].imdbID;
-    poster = data.Search[i].Poster;
-    type = data.Search[i].Type;
+      movies.push({ title, year, imdbId, poster, type });
+    }
 
-    movies.push({ title, year, imdbId, poster, type });
+    return movies;
   }
 
-  return movies;
-}
+  function redirection(test) {
+    document.querySelector("html").innerHTML = test;
+  }
 
-function redirection(test) {
-  document.querySelector("html").innerHTML = test;
-}
-
-getButton();
+  getButton();
