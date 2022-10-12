@@ -15,16 +15,17 @@
 <body>
     <header>
         <div id="navlist">
-            <a href="indexhome.html"><img src="images/logo.png"></a>
+            <a href="indexhome.html"><img src="../images/logo.png"></a>
             <div class="flexbox">
                 <h4>Rechercher...</h4>
                 <div class="search">
                     <div>
-                        <input type="text" placeholder="Search . . ." required>
+                        <input type="text" id="searchbar" placeholder="Search . . ." required>
                     </div>
+                    <button type="submit" class="searchbutton" id="search">search</button>
                 </div>
             </div>
-            <p><a href="login.php">Me connecter</a></p>
+            <p><a href="../login/login.php">Me connecter</a></p>
         </div>
     </header>
     <div class="container">

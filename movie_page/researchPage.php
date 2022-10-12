@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoviePage</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="../movie_page/moviepage.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./movie.css">
 </head>
 
 <body>
