@@ -13,17 +13,6 @@
 
   <body>
     <header>
-<<<<<<< HEAD:indexhome.html
-      <div id="navlist">
-        <a href="index.php"><img src="images/logo.png" /></a>
-        <div class="flexbox">
-          <h4>Rechercher...</h4>
-          <div class="search">
-            <div>
-              <input type="text" placeholder="Search . . ." required />
-            </div>
-          </div>
-=======
         <div id="navlist">
             <a class= "logoCinema" href="indexhome.html"><img src="../images/logo_cinema.png"></a>
             <div class="flexbox">
@@ -34,15 +23,8 @@
                     <button type="submit" class="searchbutton" id="search">search</button>
                 </div>
             </div>
-<<<<<<< HEAD
-            <p><a href="login.php">Me connecter</a></p>
->>>>>>> main:home_page/home.php
-=======
             <p><a href="../login/login.php">Sign up</a></p>
->>>>>>> main
         </div>
-        <p><a href="login.php">Me connecter</a></p>
-      </div>
     </header>
     <div class="container">
       <div class="carousel">
@@ -153,12 +135,9 @@
       <a href="contact.html">Contact</a>
     </footer>
 
-<<<<<<< HEAD:indexhome.html
-=======
-
     <script src="index.js"></script>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
->>>>>>> main:home_page/home.php
-    <script src="homesearch.js"></script>
-  </body>
+
+</body>
+
 </html>
