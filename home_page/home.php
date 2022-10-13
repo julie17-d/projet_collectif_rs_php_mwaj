@@ -19,6 +19,7 @@ session_start();
     <header>
         <div id="navlist">
             <a class= "logoCinema" href="home.php"><img src="../images/logo_cinema.png"></a>
+            <a href="home.php" class="linktitle"><h2>MOVIE TALKS</h2></a>
             <div class="flexbox">
                 <div class="search">
                     <div>

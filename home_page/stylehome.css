@@ -12,8 +12,9 @@ body {
     height: 80px;
 }
 
-.searchbutton {
-    
+.linktitle:link, .linktitle:visited, .linktitle:hover, .linktitle:active {
+    text-decoration: none;
+    color: white;
 }
 
 #navlist {
