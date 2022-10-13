@@ -35,8 +35,6 @@
                         $author = $data["author"];
                         $content = $data["content"];
                         $rating = $data["rating"];
-
-                        echo "<br><h3>$author:</h3> $content ($rating stars)";
                     }
                 }
                 echo "</div>";
