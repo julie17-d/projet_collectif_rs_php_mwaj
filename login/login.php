@@ -43,13 +43,13 @@ if (isset($_POST['submit'])) {
                 <form action="login.php" method="POST">
 
                     <div class="user-box">
-                        <label for="name"></label>
                         <input type="text" name="name" required="">
+                        <label for="name">Name</label>
                     </div>
 
                     <div class="user-box">
-                        <label for="name"></label>
                         <input type="password" name="password" required="">
+                        <label for="name">Password</label>
                     </div>
 
                     <div class="button-form">

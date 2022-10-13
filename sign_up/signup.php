@@ -31,37 +31,56 @@ if (isset($_POST["submit"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
+    <link rel="stylesheet" href="signup.css">
+    <title>Sign up</title>
 </head>
 
 <body>
-    <form action="signup.php" method="POST">
-        <div>
-            <label for="name">Your Name</label>
-            <input type="text" name="name">
-            <br>
+    <div class="affichage">
+        <div class="left">
+        <img src="../images/right20.jpg" alt="film">
+            <!-- <img src="../images/left_small2.jpg" alt="affiches films"> -->
         </div>
 
-        <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" autocomplete="off">
-            <br>
+        <div class="right">
+            <img src="../images/left_small2.jpg" alt="affiches films">
+            <!-- <img src="../images/right20.jpg" alt="film"> -->
+            <div class="signup-box">
+            <h2>Sign up</h2>
+
+                <form action="signup.php" method="POST">
+
+                    <div class="user-box">             
+                        <input type="text" name="name">
+                        <label for="name">Your Name</label>
+                        <br>
+                    </div>
+
+                    <div class="user-box">
+                        
+                        <input type="email" name="email" autocomplete="off">
+                        <label for="email">Email</label>
+                        <br>
+                    </div>
+
+                    <div class="user-box">
+                        
+                        <input type="password" name="password" autocomplete="off">
+                        <label for="pasword">Password</label>
+                        <br>
+                    </div>
+
+                    <!-- <div>
+                        <label for="re-enter password">Re-enter Password</label>
+                        <input type="text" name="re-enter password" autocomplete="off">
+                        <br>
+                    </div> -->
+
+                    <button type="submit" name="submit">Create your account</button>
+                </form>
+            </div>
         </div>
-
-        <div>
-            <label for="pasword">Password</label>
-            <input type="password" name="password" autocomplete="off">
-            <br>
-        </div>
-
-        <!-- <div>
-            <label for="re-enter password">Re-enter Password</label>
-            <input type="text" name="re-enter password" autocomplete="off">
-            <br>
-        </div> -->
-
-        <button type="submit" name="submit">Create your account</button>
-    </form>
+    </div>
 </body>
 
 </html>

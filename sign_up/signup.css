@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+
+:root {
+    --font-style: 'Nunito Sans', sans-serif;
+}
+
+body {
+    background:  #46efc8;
+    background-size: 400% 400%;
+    font-family: var(--font-style);
+    margin: 0;
+    overflow: hidden; 
+}
+
+.affichage {
+    display: flex;
+}
+
+.left {
+    width: 56%;
+    margin: 0%;
+}
+
+.right {
+    width: 50%;
+    top: auto;
+    margin: 0%;
+}
+.signup-box {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: white;
+    box-shadow: 0 15px 15px #09d46f;
+    border-radius: 10px;
+}
+
+.signup-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: black;
+    text-align: center;
+}
+
+.signup-box .user-box input {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background: transparent;
+}
+
+.signup-box .user-box label {
+    position: relative;
+    left: 0;
+    top: -60px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.signup-box .user-box input:focus~label,
+.signup-box .user-box input:valid~label {
+    top: -85px;
+    left: 0;
+    color: black;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
