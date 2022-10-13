@@ -35,6 +35,8 @@
                         $author = $data["author"];
                         $content = $data["content"];
                         $rating = $data["rating"];
+
+                        echo "<br><h3>$author:</h3> $content ($rating stars)";
                     }
                 }
                 echo "</div>";
@@ -68,11 +70,8 @@
     <?php
     if (isset($_POST["submit"])) { #isset permet de verifier qu'une requete post est faite et si pas de requete post, ca ne rentre pas dans le if
         $author = $_POST["author"];
-        echo $author;
         $content = $_POST["content"];
-        echo $content;
         $rating = $_POST["rating"];
-        echo $rating;
         //$_POST est une variable globale qui stocke toutes les donnes des requetes POST, c'est un tableau []
 
         $mysqlconnect = mysqli_connect("localhost", "root", "root", "reso_social");

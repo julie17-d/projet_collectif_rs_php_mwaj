@@ -39,33 +39,33 @@ function getButton() {
     };
   }
 }
-  async function printMovie(searchField) {
-    const data = await fetchMovies(searchField);
-    let title;
-    let year;
-    let imdbId;
-    let poster;
-    let type;
+async function printMovie(searchField) {
+  const data = await fetchMovies(searchField);
+  let title;
+  let year;
+  let imdbId;
+  let poster;
+  let type;
 
-    let movies = [];
+  let movies = [];
 
-    // console.log("data", data);
+  // console.log("data", data);
 
-    for (i = 0; i < data.Search.length; i++) {
-      title = data.Search[i].Title;
-      year = data.Search[i].Year;
-      imdbId = data.Search[i].imdbID;
-      poster = data.Search[i].Poster;
-      type = data.Search[i].Type;
+  for (i = 0; i < data.Search.length; i++) {
+    title = data.Search[i].Title;
+    year = data.Search[i].Year;
+    imdbId = data.Search[i].imdbID;
+    poster = data.Search[i].Poster;
+    type = data.Search[i].Type;
 
-      movies.push({ title, year, imdbId, poster, type });
-    }
-
-    return movies;
+    movies.push({ title, year, imdbId, poster, type });
   }
 
-  function redirection(test) {
-    document.querySelector("html").innerHTML = test;
-  }
+  return movies;
+}
 
-  getButton();
+function redirection(test) {
+  document.querySelector("html").innerHTML = test;
+}
+
+getButton();
