@@ -30,11 +30,11 @@ session_start();
             </div>
 
             <?php
-    if(!$_SESSION["name"]) {
-      ?>
-      <p><a href="../login/login.php">Sign up</a></p>
-      <?php
-      }
+    if(!isset($_SESSION['name'])) {
+        ?>
+        <p><a href="../login/login.php">Sign up</a></p>
+        <?php
+        }
     ?>
     </header>
 
@@ -146,11 +146,11 @@ session_start();
         <p>Copyright &copy; 2022 */*\* _A_J_M_W_</p>
         <a href="contact.html">Contact</a>
         <?php
-    if($_SESSION["name"]) {
-      ?>
-      Welcome <?php echo $_SESSION["name"]; ?> <a href="../login/logout.php" tite="Logout">Logout.
-      <?php
-      }
+    if(isset($_SESSION["name"])) {
+        ?>
+        Welcome <?php echo $_SESSION["name"]; ?> <a href="../login/logout.php" tite="Logout">Logout.
+        <?php
+        }
     ?>
     </footer>
 
