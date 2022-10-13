@@ -17,8 +17,8 @@ CREATE TABLE `critiques`(
 INSERT INTO `critiques` (`author`, `content`, `rating`, `imdbId`) VALUES
 ('lebossdu75', 'amazing horror movie filled with tension and dread', 4, 'tt7784604'),
 ('poniesAndRainbows', 'HATED this movie. too creepy! cant look at my daughter the same way.', 1, 'tt7784604'),
-('zoecodda', 'LOVED this movie!! creeped me out.', 5, 'tt6857112'),
-('hater24', 'meh, seen better', 2, 'tt6857112'),
+('zoecodda', 'LOVED this movie!! creeped me out.', 5, 'tt3235888'),
+('hater24', 'meh, seen better', 2, 'tt3235888'),
 ('woirda', 'MY FAVORITE MOVIE!!!', 5, 'tt18394428'),
 ('personWithTaste', 'wtf is this', 0, 'tt18394428'),
 ('rando', 'a masterpiece of the shark tornado genre', 5, 'tt2724064');
